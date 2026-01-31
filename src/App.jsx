@@ -21,6 +21,29 @@ import {
 import { BiSolidWasher } from 'react-icons/bi';
 import './App.css';
 
+// Import apartment images
+import img1 from './assets/786263757.jpg';
+import img2 from './assets/786313826.jpg';
+import img3 from './assets/786313827.jpg';
+import img4 from './assets/786313828.jpg';
+import img5 from './assets/786313829.jpg';
+import img6 from './assets/786313830.jpg';
+import img7 from './assets/786313835.jpg';
+import img8 from './assets/787267903.jpg';
+import img9 from './assets/787271787.jpg';
+import img10 from './assets/787271788.jpg';
+import img11 from './assets/787271789.jpg';
+import img12 from './assets/787271790.jpg';
+import img13 from './assets/787271791.jpg';
+import img14 from './assets/787271792.jpg';
+import img15 from './assets/787271793.jpg';
+import img16 from './assets/787271795.jpg';
+import img17 from './assets/787271796.jpg';
+import img18 from './assets/787271800.jpg';
+import img19 from './assets/787271801.jpg';
+import img20 from './assets/787271826.jpg';
+import img21 from './assets/787271830.jpg';
+
 // EmailJS Configuration
 const EMAILJS_PUBLIC_KEY = 'Q6PV8a3X535BHEswR';
 const EMAILJS_SERVICE_ID = 'service_lvrn73e';
@@ -165,14 +188,20 @@ const nearbyPlaces = [
   { name: 'Fatima Jinnah Park', distance: '13 mi' }
 ];
 
-// Gallery Images (placeholder URLs - replace with actual images)
+// Gallery Images - Real apartment photos
 const galleryImages = [
-  { id: 1, url: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800', title: 'Living Room', category: 'Interior' },
-  { id: 2, url: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800', title: 'Modern Kitchen', category: 'Kitchen' },
-  { id: 3, url: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800', title: 'Spa Bathroom', category: 'Bathroom' },
-  { id: 4, url: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800', title: 'Master Bedroom', category: 'Bedroom' },
-  { id: 5, url: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800', title: 'Balcony View', category: 'Outdoor' },
-  { id: 6, url: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800', title: 'Garden Area', category: 'Outdoor' }
+  { id: 1, url: img1, title: 'Luxury Living Room', category: 'Interior' },
+  { id: 2, url: img2, title: 'Modern Kitchen', category: 'Kitchen' },
+  { id: 3, url: img3, title: 'Elegant Bedroom', category: 'Bedroom' },
+  { id: 4, url: img4, title: 'Spa Bathroom', category: 'Bathroom' },
+  { id: 5, url: img5, title: 'Cozy Interior', category: 'Interior' },
+  { id: 6, url: img6, title: 'Living Space', category: 'Interior' },
+  { id: 7, url: img7, title: 'Dining Area', category: 'Interior' },
+  { id: 8, url: img8, title: 'Building Exterior', category: 'Exterior' },
+  { id: 9, url: img9, title: 'Apartment View', category: 'Interior' },
+  { id: 10, url: img10, title: 'Premium Amenities', category: 'Interior' },
+  { id: 11, url: img11, title: 'Balcony View', category: 'Outdoor' },
+  { id: 12, url: img12, title: 'Room Details', category: 'Interior' }
 ];
 
 // Components
@@ -244,8 +273,8 @@ function Hero() {
     <section className="hero" id="hero">
       <div className="hero-bg">
         <img 
-          src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920" 
-          alt="Luxury Apartment" 
+          src={img8} 
+          alt="Royal Apartments Building" 
           className="hero-bg-image"
         />
         <div className="hero-bg-overlay"></div>
@@ -319,7 +348,7 @@ function Hero() {
         >
           <div className="hero-image-container">
             <img 
-              src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800" 
+              src={img1} 
               alt="Royal Apartments Interior" 
               className="hero-image"
             />
@@ -371,10 +400,10 @@ function About() {
           variants={fadeIn}
         >
           <div className="about-image main">
-            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800" alt="Apartment Exterior" />
+            <img src={img9} alt="Royal Apartments Interior" />
           </div>
           <div className="about-image secondary">
-            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800" alt="Modern Kitchen" />
+            <img src={img2} alt="Modern Kitchen" />
           </div>
           <div className="about-experience-badge">
             <h3>5★</h3>
