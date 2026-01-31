@@ -1,0 +1,502 @@
+/* ========================================
+   ROYAL APARTMENTS - COMPONENT STYLES
+   Additional styles for App.jsx components
+   ======================================== */
+
+/* Hero Section Enhancements */
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-visual {
+  position: relative;
+  z-index: 1;
+}
+
+/* Amenity Cards Hover Effect */
+.amenity-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.amenity-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(180deg, transparent, rgba(212, 175, 55, 0.05));
+  transition: height 0.3s ease;
+  pointer-events: none;
+}
+
+.amenity-card:hover::after {
+  height: 100%;
+}
+
+/* Gallery Item Enhanced Styles */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.gallery-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.1) 0%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.gallery-item:hover::before {
+  opacity: 1;
+}
+
+/* Review Card Glow Effect */
+.review-card {
+  position: relative;
+}
+
+.review-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, var(--accent-gold) 0%, transparent 50%, var(--accent-gold) 100%);
+  border-radius: calc(var(--radius-md) + 2px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.review-card:hover::before {
+  opacity: 0.3;
+}
+
+/* Booking Form Enhancements */
+.booking-form input:not(:placeholder-shown):valid,
+.booking-form select:valid,
+.booking-form textarea:not(:placeholder-shown):valid {
+  border-color: #28a745;
+}
+
+.booking-form input:focus:invalid,
+.booking-form select:focus:invalid {
+  border-color: #dc3545;
+}
+
+/* Form Floating Labels Animation */
+.form-group {
+  position: relative;
+}
+
+/* Button Loading State */
+.form-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.form-submit:disabled::after {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 10px;
+  border: 2px solid transparent;
+  border-top-color: var(--primary-dark);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Navbar Mobile Menu Animation */
+.navbar-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.navbar-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Section Dividers */
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-gold),
+    transparent
+  );
+}
+
+/* Parallax Background Effect */
+.hero-bg-image {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent-gold) 0%, var(--accent-gold-dark) 100%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold-dark);
+}
+
+/* Selection Color */
+::selection {
+  background: var(--accent-gold);
+  color: var(--primary-dark);
+}
+
+::-moz-selection {
+  background: var(--accent-gold);
+  color: var(--primary-dark);
+}
+
+/* Focus States for Accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--accent-gold);
+  outline-offset: 3px;
+}
+
+/* Map Section Responsive Fix */
+@media (max-width: 768px) {
+  .map-embed iframe {
+    min-height: 350px;
+  }
+}
+
+/* Smooth Hover Transitions */
+.navbar-link,
+.btn,
+.amenity-card,
+.gallery-item,
+.review-card,
+.footer-social a,
+.footer-links a {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Image Placeholder Styles */
+.gallery-item img,
+.about-image img,
+.hero-image {
+  background: linear-gradient(135deg, var(--light-gray) 0%, var(--off-white) 100%);
+}
+
+/* Loading Skeleton Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--light-gray) 25%,
+    var(--off-white) 50%,
+    var(--light-gray) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Toast Animation Enhancement */
+.toast {
+  animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateX(-50%) translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Floating Card Pulse Effect */
+.hero-floating-card {
+  animation: floatCard 3s ease-in-out infinite;
+}
+
+.hero-floating-card.rating {
+  animation-delay: 0.5s;
+}
+
+@keyframes floatCard {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Stats Counter Animation Placeholder */
+.hero-stat-number {
+  background: linear-gradient(
+    135deg,
+    var(--accent-gold) 0%,
+    var(--accent-gold-light) 50%,
+    var(--accent-gold) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 200% auto;
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Rule Item Hover Enhancement */
+.rule-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.rule-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--accent-gold);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.rule-item:hover::before {
+  transform: scaleY(1);
+}
+
+/* Footer Animation */
+.footer-social a {
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-social a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-gold);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.footer-social a:hover::before {
+  transform: translateY(0);
+}
+
+/* Booking Benefit Icon Pulse */
+.booking-benefit-icon {
+  position: relative;
+}
+
+.booking-benefit-icon::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-gold);
+  opacity: 0;
+  animation: pulseRing 2s infinite;
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Nearby Places List Hover */
+.nearby-places ul li {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nearby-places ul li:hover {
+  padding-left: 10px;
+  color: var(--white);
+}
+
+.nearby-places ul li:hover span {
+  color: var(--white);
+}
+
+/* Section Header Decoration */
+.section-header {
+  position: relative;
+}
+
+.section-header::before,
+.section-header::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 1px;
+  background: var(--accent-gold);
+  opacity: 0.3;
+}
+
+.section-header::before {
+  left: calc(50% - 200px);
+}
+
+.section-header::after {
+  right: calc(50% - 200px);
+}
+
+@media (max-width: 768px) {
+  .section-header::before,
+  .section-header::after {
+    display: none;
+  }
+}
+
+/* Contact Icon Animation */
+.map-info-icon,
+.footer-contact-icon {
+  transition: all 0.3s ease;
+}
+
+.map-info-item:hover .map-info-icon,
+.footer-contact-item:hover .footer-contact-icon {
+  transform: scale(1.1);
+  background: var(--accent-gold);
+  color: var(--primary-dark);
+}
+
+/* Gallery Modal Backdrop Blur */
+.gallery-modal {
+  backdrop-filter: blur(10px);
+}
+
+/* Responsive Typography Adjustments */
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero-stat-number {
+    font-size: 2rem;
+  }
+  
+  .btn {
+    padding: 14px 28px;
+    font-size: 0.9rem;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --accent-gold: #FFD700;
+    --primary-dark: #000000;
+  }
+  
+  .btn-primary {
+    border: 2px solid #000;
+  }
+  
+  .navbar.scrolled {
+    border-bottom: 2px solid var(--accent-gold);
+  }
+}
+
+/* Print Styles Enhancement */
+@media print {
+  .hero-particles,
+  .hero-floating-card,
+  .scroll-to-top,
+  .navbar-cta,
+  .booking-form-container,
+  .footer-social {
+    display: none !important;
+  }
+  
+  .hero {
+    min-height: auto;
+    padding: 50px 0;
+    background: none !important;
+    color: #000 !important;
+  }
+  
+  .hero-title,
+  .hero-description {
+    color: #000 !important;
+  }
+  
+  section {
+    page-break-inside: avoid;
+  }
+}
