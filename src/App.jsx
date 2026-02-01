@@ -1107,7 +1107,7 @@ function Footer() {
             </p>
             <div className="footer-social">
               <a href="#" aria-label="Facebook"><FaFacebookF /></a>
-              <a href="#" aria-label="Instagram"><FaInstagram /></a>
+              <a href="https://www.instagram.com/royal.apartments.isb" aria-label="Instagram"><FaInstagram /></a>
               <a href="https://wa.me/923215009470" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
             </div>
           </div>
